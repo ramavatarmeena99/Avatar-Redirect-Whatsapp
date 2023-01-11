@@ -9,7 +9,7 @@ export default function Home() {
   const [user_age, setuser_age] = useState("");
   const sendResponse = () => {
     var url =
-      "https://api.whatsapp.com/send?phone=8824316660" +
+      "https://api.whatsapp.com/send?phone=918824316660" +
       "&text=" +
       "Your Name: " +
       user_Name +
