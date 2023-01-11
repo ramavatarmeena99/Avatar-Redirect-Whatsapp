@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
 export default function Header() {
   return (
-    <div style={{width:"100%",height:"7vh",display:"flex",alignItems:"center",justifyContent:"center",borderBottom:"1px solid black"}}>
-<h1>Redirect to whatsapp</h1>
-    </div>
-  )
+    <Div
+     
+    >
+      <h1>Redirect to whatsapp</h1>
+    </Div>
+  );
 }
+const Div = styled.div`
+width: 100%;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid black;
+`;
