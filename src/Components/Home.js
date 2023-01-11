@@ -94,6 +94,10 @@ const ForMiddleDiv = styled.div`
   justify-content: center;
   border: 1px solid black;
   border-radius:3px ;
+  @media (max-width: 768px) {
+  width: 90%;
+
+  }
 
 `;
 const UserDetails = styled.div`
@@ -105,10 +109,12 @@ const UserDetails = styled.div`
   justify-content: center;
 `;
 const Button = styled.button`
-  width: 20%;
+  width: auto;
+  padding:5px 30px;
   height: 40px;
   margin: 20px;
   cursor: pointer;
+  
 `;
 
 const Input = styled.input`
@@ -116,4 +122,5 @@ const Input = styled.input`
   height: 40px;
   border-radius:3px ;
   border:1px solid black ;
+  padding-left:10px;
 `;
