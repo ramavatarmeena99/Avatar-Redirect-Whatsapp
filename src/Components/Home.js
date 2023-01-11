@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import Header from "./Header";
 
 export default function Home() {
   const [user_Name, setuser_name] = useState("");
@@ -24,116 +26,94 @@ export default function Home() {
     window.open(url, "_blank");
   };
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        style={{
-          width: "50%",
-          height: "60vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          border: "1px solid black",
-        }}
-      >
-        <div
-          style={{
-            width: "90%",
-            height: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-        >
+    <>
+     <Header/>
+
+<MainContainer>
+      <ForMiddleDiv>
+        <UserDetails>
           <h1 style={{ fontSize: "14px" }}>Name</h1>
-          <input
+          <Input
             value={user_Name}
             onChange={(e) => setuser_name(e.target.value)}
-            style={{ width: "90%", height: "40px" }}
             type="text"
             placeholder="Enter Name"
           />
-        </div>
-        <div
-          style={{
-            width: "90%",
-            height: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-        >
+        </UserDetails>
+        <UserDetails>
           <h1 style={{ fontSize: "14px" }}>Email</h1>
-          <input
+          <Input
             value={user_email}
             onChange={(e) => setuser_email(e.target.value)}
-            style={{ width: "90%", height: "40px" }}
             type="text"
             placeholder="Enter Email"
           />
-        </div>
-        <div
-          style={{
-            width: "90%",
-            height: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-        >
+        </UserDetails>
+        <UserDetails>
           <h1 style={{ fontSize: "14px" }}>Messege</h1>
-          <input
+          <Input
             value={user_messege}
             onChange={(e) => setuser_messege(e.target.value)}
-            style={{ width: "90%", height: "40px" }}
             type="text"
             placeholder="Enter Messege"
           />
-        </div>
+        </UserDetails>
 
-        <div
-          style={{
-            width: "90%",
-            height: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-        >
+        <UserDetails>
           <h1 style={{ fontSize: "14px" }}>Age</h1>
-          <input
+          <Input
             value={user_age}
             onChange={(e) => setuser_age(e.target.value)}
-            style={{ width: "90%", height: "40px" }}
-            type="text"
-            placeholder="Enter YOur Age"
+            type="number"
+            placeholder="Enter Your Age"
           />
-        </div>
+        </UserDetails>
 
-        <button
-          style={{
-            width: "20%",
-            height: "40px",
-            margin: "20px",
-            cursor: "pointer",
-          }}
-          onClick={sendResponse}
-        >
-          Submit
-        </button>
-      </div>
-    </div>
+        <Button onClick={sendResponse}>Submit</Button>
+      </ForMiddleDiv>
+    </MainContainer>
+    </>
+   
   );
 }
+
+const MainContainer = styled.div`
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ForMiddleDiv = styled.div`
+  width: 50%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius:3px ;
+
+`;
+const UserDetails = styled.div`
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`;
+const Button = styled.button`
+  width: 20%;
+  height: 40px;
+  margin: 20px;
+  cursor: pointer;
+`;
+
+const Input = styled.input`
+  width: 90%;
+  height: 40px;
+  border-radius:3px ;
+  border:1px solid black ;
+`;
