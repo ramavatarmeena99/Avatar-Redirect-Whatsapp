@@ -26,8 +26,7 @@ export default function Home() {
     window.open(url, "_blank");
   };
   const sendEmail = () => {
-    window.open('mailto:meenaramavatar48@gmail.com');
-
+    window.open(`mailto:meenaramavatar48@gmail.com?subject=${user_Name}&body=${user_messege}`);
   };
   return (
     <>
