@@ -42,7 +42,7 @@ export default function Home() {
 
       <MainContainer>
         <ForMiddleDiv>
-        <p style={{fontSize:"20px",borderBottom:"1px solid black",color:"#2a8ff7"}} >Contact Form</p>
+        <p style={{fontSize:"20px",borderBottom:"1px solid white",color:"#2a8ff7"}} >Contact Form</p>
 
           <UserDetails>
             <H1 >Name</H1>
@@ -91,14 +91,14 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <Button onClick={sendResponse}>
+            <WhatsappButton onClick={sendResponse}>
               {" "}
-              <AiOutlineWhatsApp />
-            </Button>
-            <Button onClick={sendEmail}>
+              <AiOutlineWhatsApp  />
+            </WhatsappButton>
+            <GmailButton onClick={sendEmail}>
               {" "}
               <SiGmail />
-            </Button>
+            </GmailButton>
           </div>
           <p style={{ fontSize: "16px", color: "red", fontWeight: "bold" }}>
             ** Email or Age is not needed if you want to use Gmail **
@@ -111,10 +111,11 @@ export default function Home() {
 
 const MainContainer = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 93vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color:#24292f ;
 `;
 
 const ForMiddleDiv = styled.div`
@@ -124,7 +125,7 @@ const ForMiddleDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 3px;
   padding: 20px;
   @media (max-width: 768px) {
@@ -139,14 +140,25 @@ const UserDetails = styled.div`
   align-items: flex-start;
   justify-content: center;
 `;
-const Button = styled.button`
+const WhatsappButton = styled.button`
   width: auto;
   padding: 5px 30px;
   height: 40px;
   margin: 20px;
   cursor: pointer;
   font-size: 28px;
+  color:darkgreen;
 `;
+const GmailButton = styled.button`
+  width: auto;
+  padding: 5px 30px;
+  height: 40px;
+  margin: 20px;
+  cursor: pointer;
+  font-size: 28px;
+  color:#c71610;
+`;
+
 
 const Input = styled.input`
   width: 90%;
@@ -171,5 +183,6 @@ const TextArea = styled.textarea`
 
 const H1 = styled.h1`
 font-size:16px ;
+color:white
 
 `;
