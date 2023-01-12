@@ -10,9 +10,14 @@ export default function Home() {
   const [user_messege, setuser_messege] = useState("");
   const [user_Mobile_number, setuser_mobile_number] = useState("");
   const sendResponse = () => {
-    if(user_Name === "" || user_email === "" || user_messege ==="" || user_Mobile_number===""){
-      alert("empty data")
-      return
+    if (
+      user_Name === "" ||
+      user_email === "" ||
+      user_messege === "" ||
+      user_Mobile_number === ""
+    ) {
+      alert("empty data");
+      return;
     }
     var url =
       "https://api.whatsapp.com/send?phone=918824316660" +
@@ -42,10 +47,18 @@ export default function Home() {
 
       <MainContainer>
         <ForMiddleDiv>
-        <p style={{fontSize:"20px",borderBottom:"1px solid white",color:"#2a8ff7"}} >Contact Form</p>
+          <p
+            style={{
+              fontSize: "20px",
+              borderBottom: "1px solid white",
+              color: "#2a8ff7",
+            }}
+          >
+            Contact Form
+          </p>
 
           <UserDetails>
-            <H1 >Name</H1>
+            <H1>Name</H1>
             <Input
               value={user_Name}
               onChange={(e) => setuser_name(e.target.value)}
@@ -54,7 +67,7 @@ export default function Home() {
             />
           </UserDetails>
           <UserDetails>
-            <H1 >Email</H1>
+            <H1>Email</H1>
             <Input
               value={user_email}
               onChange={(e) => setuser_email(e.target.value)}
@@ -63,7 +76,7 @@ export default function Home() {
             />
           </UserDetails>
           <UserDetails>
-            <H1 >Contact Number</H1>
+            <H1>Contact Number</H1>
             <Input
               value={user_Mobile_number}
               onChange={(e) => setuser_mobile_number(e.target.value)}
@@ -72,7 +85,7 @@ export default function Home() {
             />
           </UserDetails>
           <UserDetails>
-            <H1 >Messege</H1>
+            <H1>Messege</H1>
             <TextArea
               value={user_messege}
               onChange={(e) => setuser_messege(e.target.value)}
@@ -81,7 +94,6 @@ export default function Home() {
             />
           </UserDetails>
 
-        
           <div
             style={{
               width: "100%",
@@ -93,7 +105,7 @@ export default function Home() {
           >
             <WhatsappButton onClick={sendResponse}>
               {" "}
-              <AiOutlineWhatsApp  />
+              <AiOutlineWhatsApp />
             </WhatsappButton>
             <GmailButton onClick={sendEmail}>
               {" "}
@@ -115,7 +127,7 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#24292f ;
+  background-color: #24292f;
 `;
 
 const ForMiddleDiv = styled.div`
@@ -147,7 +159,7 @@ const WhatsappButton = styled.button`
   margin: 20px;
   cursor: pointer;
   font-size: 28px;
-  color:darkgreen;
+  color: darkgreen;
 `;
 const GmailButton = styled.button`
   width: auto;
@@ -156,9 +168,8 @@ const GmailButton = styled.button`
   margin: 20px;
   cursor: pointer;
   font-size: 28px;
-  color:#c71610;
+  color: #c71610;
 `;
-
 
 const Input = styled.input`
   width: 90%;
@@ -167,6 +178,7 @@ const Input = styled.input`
   border: 1px solid black;
   padding-left: 10px;
   font-size: 16px;
+  outline: none;
 `;
 
 const TextArea = styled.textarea`
@@ -178,11 +190,9 @@ const TextArea = styled.textarea`
   border-radius: 3px;
   border: 1px solid black;
   padding-left: 10px;
-
 `;
 
 const H1 = styled.h1`
-font-size:16px ;
-color:white
-
+  font-size: 16px;
+  color: white;
 `;
