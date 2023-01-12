@@ -38,8 +38,10 @@ export default function Home() {
 
       <MainContainer>
         <ForMiddleDiv>
+        <p style={{fontSize:"20px",borderBottom:"1px solid black",color:"#2a8ff7"}} >Contact Form</p>
+
           <UserDetails>
-            <h1 style={{ fontSize: "14px" }}>Name</h1>
+            <H1 >Name</H1>
             <Input
               value={user_Name}
               onChange={(e) => setuser_name(e.target.value)}
@@ -48,7 +50,7 @@ export default function Home() {
             />
           </UserDetails>
           <UserDetails>
-            <h1 style={{ fontSize: "14px" }}>Email</h1>
+            <H1 >Email</H1>
             <Input
               value={user_email}
               onChange={(e) => setuser_email(e.target.value)}
@@ -57,7 +59,16 @@ export default function Home() {
             />
           </UserDetails>
           <UserDetails>
-            <h1 style={{ fontSize: "14px" }}>Messege</h1>
+            <H1 >Contact Number</H1>
+            <Input
+              value={user_age}
+              onChange={(e) => setuser_age(e.target.value)}
+              type="number"
+              placeholder="Enter Your Contact Number"
+            />
+          </UserDetails>
+          <UserDetails>
+            <H1 >Messege</H1>
             <TextArea
               value={user_messege}
               onChange={(e) => setuser_messege(e.target.value)}
@@ -66,15 +77,7 @@ export default function Home() {
             />
           </UserDetails>
 
-          <UserDetails>
-            <h1 style={{ fontSize: "14px" }}>Age</h1>
-            <Input
-              value={user_age}
-              onChange={(e) => setuser_age(e.target.value)}
-              type="number"
-              placeholder="Enter Your Age"
-            />
-          </UserDetails>
+        
           <div
             style={{
               width: "100%",
@@ -159,5 +162,10 @@ const TextArea = styled.textarea`
   border-radius: 3px;
   border: 1px solid black;
   padding-left: 10px;
-  
+
+`;
+
+const H1 = styled.h1`
+font-size:16px ;
+
 `;
