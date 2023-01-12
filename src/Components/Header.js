@@ -6,7 +6,7 @@ export default function Header() {
     <Div
      
     >
-      <h1>Redirect to whatsapp</h1>
+      <h1>Redirect to whatsapp/Gmail</h1>
     </Div>
   );
 }

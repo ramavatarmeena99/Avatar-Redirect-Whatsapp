@@ -8,22 +8,26 @@ export default function Home() {
   const [user_Name, setuser_name] = useState("");
   const [user_email, setuser_email] = useState("");
   const [user_messege, setuser_messege] = useState("");
-  const [user_age, setuser_age] = useState("");
+  const [user_Mobile_number, setuser_mobile_number] = useState("");
   const sendResponse = () => {
+    if(user_Name === "" || user_email === "" || user_messege ==="" || user_Mobile_number===""){
+      alert("empty data")
+      return
+    }
     var url =
       "https://api.whatsapp.com/send?phone=918824316660" +
       "&text=" +
-      "Your Name: " +
+      "Name: " +
       user_Name +
       "%0a" +
-      "Your Email: " +
+      "Email: " +
       user_email +
       "%0a" +
-      "Your Messege: " +
+      "Messege: " +
       user_messege +
       "%0a" +
-      "Your Age: " +
-      user_age +
+      "Contact Number : " +
+      user_Mobile_number +
       "%0a";
     window.open(url, "_blank");
   };
@@ -61,8 +65,8 @@ export default function Home() {
           <UserDetails>
             <H1 >Contact Number</H1>
             <Input
-              value={user_age}
-              onChange={(e) => setuser_age(e.target.value)}
+              value={user_Mobile_number}
+              onChange={(e) => setuser_mobile_number(e.target.value)}
               type="number"
               placeholder="Enter Your Contact Number"
             />
