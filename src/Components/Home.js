@@ -25,6 +25,10 @@ export default function Home() {
       "%0a";
     window.open(url, "_blank");
   };
+  const sendEmail = () => {
+    window.open('mailto:meenaramavatar48@gmail.com');
+
+  };
   return (
     <>
      <Header/>
@@ -70,6 +74,8 @@ export default function Home() {
         </UserDetails>
 
         <Button onClick={sendResponse}>Submit</Button>
+     <button onClick={sendEmail}>EMaill</button>
+
       </ForMiddleDiv>
     </MainContainer>
     </>
