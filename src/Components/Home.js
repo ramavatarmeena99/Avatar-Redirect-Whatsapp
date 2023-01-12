@@ -141,7 +141,7 @@ const ForMiddleDiv = styled.div`
   border-radius: 3px;
   padding: 20px;
   @media (max-width: 768px) {
-    width: 90%;
+    width: 85%;
   }
 `;
 const UserDetails = styled.div`

@@ -17,4 +17,8 @@ width: 100%;
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid black;
+        @media (max-width: 768px) {
+
+font-size:9px ;
+  }
 `;
