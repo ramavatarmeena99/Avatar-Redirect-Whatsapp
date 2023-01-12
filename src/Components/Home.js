@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { SiGmail } from "react-icons/si";
 
 export default function Home() {
   const [user_Name, setuser_name] = useState("");
@@ -26,59 +28,77 @@ export default function Home() {
     window.open(url, "_blank");
   };
   const sendEmail = () => {
-    window.open(`mailto:meenaramavatar48@gmail.com?subject=${user_Name}&body=${user_messege}`);
+    window.open(
+      `mailto:meenaramavatar48@gmail.com?subject=${user_Name}&body=${user_messege}`
+    );
   };
   return (
     <>
-     <Header/>
+      <Header />
 
-<MainContainer>
-      <ForMiddleDiv>
-        <UserDetails>
-          <h1 style={{ fontSize: "14px" }}>Name</h1>
-          <Input
-            value={user_Name}
-            onChange={(e) => setuser_name(e.target.value)}
-            type="text"
-            placeholder="Enter Name"
-          />
-        </UserDetails>
-        <UserDetails>
-          <h1 style={{ fontSize: "14px" }}>Email</h1>
-          <Input
-            value={user_email}
-            onChange={(e) => setuser_email(e.target.value)}
-            type="text"
-            placeholder="Enter Email"
-          />
-        </UserDetails>
-        <UserDetails>
-          <h1 style={{ fontSize: "14px" }}>Messege</h1>
-          <Input
-            value={user_messege}
-            onChange={(e) => setuser_messege(e.target.value)}
-            type="text"
-            placeholder="Enter Messege"
-          />
-        </UserDetails>
+      <MainContainer>
+        <ForMiddleDiv>
+          <UserDetails>
+            <h1 style={{ fontSize: "14px" }}>Name</h1>
+            <Input
+              value={user_Name}
+              onChange={(e) => setuser_name(e.target.value)}
+              type="text"
+              placeholder="Enter Name"
+            />
+          </UserDetails>
+          <UserDetails>
+            <h1 style={{ fontSize: "14px" }}>Email</h1>
+            <Input
+              value={user_email}
+              onChange={(e) => setuser_email(e.target.value)}
+              type="text"
+              placeholder="Enter Email"
+            />
+          </UserDetails>
+          <UserDetails>
+            <h1 style={{ fontSize: "14px" }}>Messege</h1>
+            <TextArea
+              value={user_messege}
+              onChange={(e) => setuser_messege(e.target.value)}
+              type="text"
+              placeholder="Enter Messege"
+            />
+          </UserDetails>
 
-        <UserDetails>
-          <h1 style={{ fontSize: "14px" }}>Age</h1>
-          <Input
-            value={user_age}
-            onChange={(e) => setuser_age(e.target.value)}
-            type="number"
-            placeholder="Enter Your Age"
-          />
-        </UserDetails>
-
-        <Button onClick={sendResponse}>Submit</Button>
-     <button onClick={sendEmail}>EMaill</button>
-
-      </ForMiddleDiv>
-    </MainContainer>
+          <UserDetails>
+            <h1 style={{ fontSize: "14px" }}>Age</h1>
+            <Input
+              value={user_age}
+              onChange={(e) => setuser_age(e.target.value)}
+              type="number"
+              placeholder="Enter Your Age"
+            />
+          </UserDetails>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Button onClick={sendResponse}>
+              {" "}
+              <AiOutlineWhatsApp />
+            </Button>
+            <Button onClick={sendEmail}>
+              {" "}
+              <SiGmail />
+            </Button>
+          </div>
+          <p style={{ fontSize: "16px", color: "red", fontWeight: "bold" }}>
+            ** Email or Age is not needed if you want to use Gmail **
+          </p>
+        </ForMiddleDiv>
+      </MainContainer>
     </>
-   
   );
 }
 
@@ -92,18 +112,17 @@ const MainContainer = styled.div`
 
 const ForMiddleDiv = styled.div`
   width: 50%;
-  height: 60vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  border-radius:3px ;
+  border-radius: 3px;
+  padding: 20px;
   @media (max-width: 768px) {
-  width: 90%;
-
+    width: 90%;
   }
-
 `;
 const UserDetails = styled.div`
   width: 90%;
@@ -115,17 +134,30 @@ const UserDetails = styled.div`
 `;
 const Button = styled.button`
   width: auto;
-  padding:5px 30px;
+  padding: 5px 30px;
   height: 40px;
   margin: 20px;
   cursor: pointer;
-  
+  font-size: 28px;
 `;
 
 const Input = styled.input`
   width: 90%;
   height: 40px;
-  border-radius:3px ;
-  border:1px solid black ;
-  padding-left:10px;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding-left: 10px;
+  font-size: 16px;
+`;
+
+const TextArea = styled.textarea`
+  min-width: 90%;
+  max-width: 90%;
+  font-size: 16px;
+  max-height: 150px;
+  min-height: 40px;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding-left: 10px;
+  
 `;
